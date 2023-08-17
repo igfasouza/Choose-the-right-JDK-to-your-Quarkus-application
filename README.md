@@ -15,10 +15,11 @@ You can join/help this effort as well, by cloning the project and sending your r
 Feel free to Fork this project and adapt it to your needs.
 This idea could be pivoted to several other things, like other Frameworks, and other OS, it could be on the top of Kubernetes or using a cloud provider and so on ...
 
-Question that we would like to answer
-Which openJDK has the best results for Quarkus?
-Which open JDK has the worst result?
-Is there any pattern in the results?
+### Question that we would like to answer
+
+* Which openJDK has the best results for Quarkus?
+* Which open JDK has the worst result?
+* Is there any pattern in the results?
 
 It would be nice to say/show if Azul is really the best or if Oracle is a bad choice or if Red Hat is not the best with Quarkus
 
