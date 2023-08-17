@@ -33,8 +33,8 @@ It would be nice to say/show if Azul is really the best or if Oracle is a bad ch
 
 ### To Stat
 
-Define what type of application we want to try out. (start with a simple CRUD)
-Define a list of 10-ish openJDK to test out.
+* Define what type of application we want to try out. (start with a simple CRUD)
+* Define a list of 10-ish openJDK to test out.
 
 
 ### Contributing
