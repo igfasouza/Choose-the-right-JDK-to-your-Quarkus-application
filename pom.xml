@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.igfasouza.quarkus</groupId>
   <artifactId>quarkus-project</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.1</version>
   <properties>
     <surefire-plugin.version>3.1.2</surefire-plugin.version>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -13,7 +13,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <quarkus.package.type>uber-jar</quarkus.package.type>
     <quarkus.package.runner-suffix>igor</quarkus.package.runner-suffix>
-    <jdk.path>/home/igor/graalvm/graalvm-ce-java17-22.0.0.2/bin/javac</jdk.path>
+    <jdk.path>jdk/graalvm-jdk-17.0.8+9.1/bin/javac</jdk.path>
+    <buildDirectory>${project.basedir}/images/target</buildDirectory>
+    <filename>${project.artifactId}-${project.version}</filename>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -77,15 +79,97 @@
               </systemProperties>
           </configuration>
       </plugin>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.8</version>
+          <executions>
+              <execution>
+                  <phase>package</phase>
+                  <configuration>
+                      <target>
+                          <copy file="target/${filename}${quarkus.package.runner-suffix}.jar" tofile="images/${filename}${quarkus.package.runner-suffix}.jar"/>
+                      </target>
+                  </configuration>
+                  <goals>
+                      <goal>run</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
     </plugins>
   </build>
   <profiles>
     <profile>
+        <id>oracle</id>
+        <properties>
+          <quarkus.package.runner-suffix>-oracle</quarkus.package.runner-suffix>
+          <jdk.path>jdk/oracle/oracle-java17-22.0.0.2/bin/javac</jdk.path>
+        </properties>
+    </profile>
+    <profile>
         <id>graalvm</id>
         <properties>
           <quarkus.package.runner-suffix>-graalvm</quarkus.package.runner-suffix>
-          <jdk.path>/home/igor/graalvm/graalvm-ce-java17-22.0.0.2/bin/javac</jdk.path>
+          <jdk.path>jdk/graalvm/graalvm-ce-java17-22.0.0.2/bin/javac</jdk.path>
         </properties>
     </profile>
+    <profile>
+        <id>corretto</id>
+        <properties>
+          <quarkus.package.runner-suffix>-corretto</quarkus.package.runner-suffix>
+          <jdk.path>jdk/corretto/amazon-corretto-17.jdk/bin/javac</jdk.path>
+        </properties>
+    </profile>
+    <profile>
+        <id>microsoft</id>
+        <properties>
+          <quarkus.package.runner-suffix>-microsoft</quarkus.package.runner-suffix>
+          <jdk.path>jdk/microsoft/jdk-17.0.8+7/bin/javac</jdk.path>
+        </properties>
+    </profile>
+    <profile>
+        <id>openjdk</id>
+        <properties>
+          <quarkus.package.runner-suffix>-openjdk</quarkus.package.runner-suffix>
+          <jdk.path>jdk/openjdk/jdk-17.0.2.jdk/bin/javac</jdk.path>
+        </properties>
+    </profile>
+    <profile>
+        <id>semeru</id>
+        <properties>
+          <quarkus.package.runner-suffix>-semeru</quarkus.package.runner-suffix>
+          <jdk.path>jdk/semeru/jdk-17.0.8+7/bin/javac</jdk.path>
+        </properties>
+    </profile>
+    <profile>
+        <id>zulu</id>
+        <properties>
+          <quarkus.package.runner-suffix>-zulu</quarkus.package.runner-suffix>
+          <jdk.path>jdk/zulu/zulu17.44.15_1-ca-jdk17.0.8/bin/javac</jdk.path>
+        </properties>
+    </profile>
+    <profile>
+        <id>temurin</id>
+        <properties>
+          <quarkus.package.runner-suffix>-temurin</quarkus.package.runner-suffix>
+          <jdk.path>jdk/temurin/temurin17.44.15_1-ca-jdk17.0.8/bin/javac</jdk.path>
+        </properties>
+    </profile>
+    <profile>
+        <id>dragonwell</id>
+        <properties>
+          <quarkus.package.runner-suffix>-dragonwell</quarkus.package.runner-suffix>
+          <jdk.path>jdk/dragonwell/zulu17.44.15_1-ca-jdk17.0.8-macosx_aarch64/bin/javac</jdk.path>
+        </properties>
+    </profile>
+    <profile>
+        <id>mandrel</id>
+        <properties>
+          <quarkus.package.runner-suffix>-mandrel</quarkus.package.runner-suffix>
+          <jdk.path>jdk/mandrel/zulu17.44.15_1-ca-jdk17.0.8-macosx_aarch64/bin/javac</jdk.path>
+        </properties>
+    </profile>
+
   </profiles>
 </project>
