@@ -104,7 +104,7 @@
         <id>oracle</id>
         <properties>
           <quarkus.package.runner-suffix>-oracle</quarkus.package.runner-suffix>
-          <jdk.path>jdk/oracle/oracle-java17-22.0.0.2/bin/javac</jdk.path>
+          <jdk.path>jdk/oracle/jdk-17.0.8/bin/javac</jdk.path>
         </properties>
     </profile>
     <profile>
@@ -118,56 +118,56 @@
         <id>corretto</id>
         <properties>
           <quarkus.package.runner-suffix>-corretto</quarkus.package.runner-suffix>
-          <jdk.path>jdk/corretto/amazon-corretto-17.jdk/bin/javac</jdk.path>
+          <jdk.path>jdk/corretto/jdk/corretto/amazon-corretto-17.0.8.8.1-linux-x64/bin/javac</jdk.path>
         </properties>
     </profile>
     <profile>
         <id>microsoft</id>
         <properties>
           <quarkus.package.runner-suffix>-microsoft</quarkus.package.runner-suffix>
-          <jdk.path>jdk/microsoft/jdk-17.0.8+7/bin/javac</jdk.path>
+          <jdk.path>jdk/microsoft/jdk-17.0.8.1+1/bin/javac</jdk.path>
         </properties>
     </profile>
     <profile>
         <id>openjdk</id>
         <properties>
           <quarkus.package.runner-suffix>-openjdk</quarkus.package.runner-suffix>
-          <jdk.path>jdk/openjdk/jdk-17.0.2.jdk/bin/javac</jdk.path>
+          <jdk.path>jdk/openjdk/jdk-17.0.2/bin/javac</jdk.path>
         </properties>
     </profile>
     <profile>
         <id>semeru</id>
         <properties>
           <quarkus.package.runner-suffix>-semeru</quarkus.package.runner-suffix>
-          <jdk.path>jdk/semeru/jdk-17.0.8+7/bin/javac</jdk.path>
+          <jdk.path>jdk/semeru/jdk-17.0.8.1+1/bin/javac</jdk.path>
         </properties>
     </profile>
     <profile>
         <id>zulu</id>
         <properties>
           <quarkus.package.runner-suffix>-zulu</quarkus.package.runner-suffix>
-          <jdk.path>jdk/zulu/zulu17.44.15_1-ca-jdk17.0.8/bin/javac</jdk.path>
+          <jdk.path>jdk/zulu/zulu17.46.19-ca-jdk17.0.9-linux_x64/bin/javac</jdk.path>
         </properties>
     </profile>
     <profile>
         <id>temurin</id>
         <properties>
           <quarkus.package.runner-suffix>-temurin</quarkus.package.runner-suffix>
-          <jdk.path>jdk/temurin/temurin17.44.15_1-ca-jdk17.0.8/bin/javac</jdk.path>
+          <jdk.path>jdk/temurin/jdk-17.0.9+9/bin/javac</jdk.path>
         </properties>
     </profile>
     <profile>
         <id>dragonwell</id>
         <properties>
           <quarkus.package.runner-suffix>-dragonwell</quarkus.package.runner-suffix>
-          <jdk.path>jdk/dragonwell/zulu17.44.15_1-ca-jdk17.0.8-macosx_aarch64/bin/javac</jdk.path>
+          <jdk.path>jdk/dragonwell/dragonwell/dragonwell-17.0.8.0.8+7-GA/bin/javac</jdk.path>
         </properties>
     </profile>
     <profile>
         <id>mandrel</id>
         <properties>
           <quarkus.package.runner-suffix>-mandrel</quarkus.package.runner-suffix>
-          <jdk.path>jdk/mandrel/zulu17.44.15_1-ca-jdk17.0.8-macosx_aarch64/bin/javac</jdk.path>
+          <jdk.path>jdk/mandrel/mandrel-java17-23.0.1.2-Final/bin/javac</jdk.path>
         </properties>
     </profile>
 
